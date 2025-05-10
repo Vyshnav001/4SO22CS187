@@ -1,9 +1,13 @@
 import express from "express";
-import dotenv from "dotenv";
-import numberRouter from "./routes/numbers";
-dotenv.config();
+
 const app = express();
 app.use(express.json());
+import dotenv from "dotenv";
+dotenv.config();
+import numberRouter from "./routes/numbers";
+
+const router = express.Router();
+
 app.use("/api/v1/numbers", numberRouter);
 
 app.listen(3000, () => {
