@@ -4,6 +4,7 @@ const AuthHeader = {
     Authorization: "Bearer " + process.env.BEARER_TOKEN,
     "Content-Type": "application/json",
 };
+console.log("Auth header"+AuthHeader);
 const windowSize = 10;
 let numbers: number[] = [];
 
@@ -50,7 +51,7 @@ export const fetchNumberAndCalculate = async (numberId: string) => {
     // calculate the average
     const sum = numbers.reduce((acc, num) => acc + num, 0);
     const average = sum / numbers.length;
- //return the response
+
     return {
         windowPrevState: windowPrevState,
         windowCurrState: numbers,
